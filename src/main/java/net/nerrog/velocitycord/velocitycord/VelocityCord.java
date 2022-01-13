@@ -28,7 +28,7 @@ import java.nio.file.Paths;
 @Plugin(
         id = "velocitycord",
         name = "VelocityCord",
-        version = "1.0-SNAPSHOT",
+        version = "1.1-SNAPSHOT",
         authors = {"nerrog"}
 )
 public class VelocityCord {
@@ -72,9 +72,7 @@ public class VelocityCord {
 
     public static void inGameBroadcast(String message){
         TextComponent textComponent = Component.text(message);
-        for (RegisteredServer s : VelocityCord.proxyServer.getAllServers()) {
-            s.sendMessage(textComponent);
-        }
+        proxyServer.sendMessage(textComponent);
     }
 
     private JDA InitializeJDA(String token, String Status) throws LoginException {
