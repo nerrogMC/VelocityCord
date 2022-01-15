@@ -3,11 +3,9 @@ package net.nerrog.velocitycord.velocitycord.yaml;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Arrays;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class ConfigLoader {
     public static config LoadConfig(){
