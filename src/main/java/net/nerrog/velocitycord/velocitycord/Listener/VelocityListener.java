@@ -22,7 +22,7 @@ public class VelocityListener {
                 //https://tydiumcraft.net/docs/skinapi
                 //から頭を取得する
                 embed.setAuthor(event.getPlayer().getUsername()+"("+event.getPlayer().getCurrentServer().get().getServerInfo().getName()+")"
-                        , null, "https://api.tydiumcraft.net/skin?uuid="+event.getPlayer().getUniqueId()+"type=avatar");
+                        , null, "https://api.tydiumcraft.net/skin?uuid="+event.getPlayer().getUniqueId()+"&type=avatar");
             }else {
                 //JEのアバターを使う
                 embed.setAuthor(event.getPlayer().getUsername()+"("+event.getPlayer().getCurrentServer().get().getServerInfo().getName()+")"
