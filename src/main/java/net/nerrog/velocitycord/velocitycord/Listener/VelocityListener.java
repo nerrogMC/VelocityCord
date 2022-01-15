@@ -14,26 +14,8 @@ public class VelocityListener {
     public void onPlayerChat(PlayerChatEvent event) {
         //チャットからEmbedを作成してDiscordに転送
         EmbedBuilder embed = new EmbedBuilder();
-
-        //サーバーでFloodgateが有効か
-        if (VelocityCord.isActiveFloodgate){
-            //UUIDがBedrockプレイヤーだった場合
-            if(VelocityCord.floodgateApi.isFloodgatePlayer(event.getPlayer().getUniqueId())){
-                //https://tydiumcraft.net/docs/skinapi
-                //から頭を取得する
-                embed.setAuthor(event.getPlayer().getUsername()+"("+event.getPlayer().getCurrentServer().get().getServerInfo().getName()+")"
-                        , null, "https://api.tydiumcraft.net/skin?uuid="+event.getPlayer().getUniqueId()+"&type=avatar");
-            }else {
-                //JEのアバターを使う
-                embed.setAuthor(event.getPlayer().getUsername()+"("+event.getPlayer().getCurrentServer().get().getServerInfo().getName()+")"
-                        , null, "https://cravatar.eu/avatar/"+event.getPlayer().getUsername());
-            }
-        }else {
-            //JEのアバターを使う
-            embed.setAuthor(event.getPlayer().getUsername()+"("+event.getPlayer().getCurrentServer().get().getServerInfo().getName()+")"
-                    , null, "https://cravatar.eu/avatar/"+event.getPlayer().getUsername());
-        }
-
+        embed.setAuthor(event.getPlayer().getUsername()+"("+event.getPlayer().getCurrentServer().get().getServerInfo().getName()+")"
+                , null, "https://api.tydiumcraft.net/skin?uuid="+event.getPlayer().getUniqueId()+"&type=avatar");
         embed.setTitle(event.getMessage());
         embed.setFooter("Minecraft Ingame Chat(VelocityCord)");
 

@@ -15,7 +15,6 @@ import net.nerrog.velocitycord.velocitycord.Listener.DiscordListener;
 import net.nerrog.velocitycord.velocitycord.Listener.VelocityListener;
 import net.nerrog.velocitycord.velocitycord.yaml.ConfigLoader;
 import net.nerrog.velocitycord.velocitycord.yaml.config;
-import org.geysermc.floodgate.api.FloodgateApi;
 import org.slf4j.Logger;
 
 import javax.security.auth.login.LoginException;
@@ -32,8 +31,6 @@ public class VelocityCord {
     private static ProxyServer proxyServer;
     private static JDA jda;
     private static config config;
-    public static FloodgateApi floodgateApi;
-    public static Boolean isActiveFloodgate;
 
     @Inject
     public VelocityCord(ProxyServer proxyServer, Logger logger){
@@ -48,12 +45,6 @@ public class VelocityCord {
         if (config == null){
             logger.error("ConfigFile Load Error!");
             throw new Exception();
-        }
-
-        //Initialize FloodgateApi
-        if (proxyServer.getPluginManager().getPlugin("floodgate").isPresent()){
-            floodgateApi = FloodgateApi.getInstance();
-            isActiveFloodgate = true;
         }
 
         //Initialize Discord
