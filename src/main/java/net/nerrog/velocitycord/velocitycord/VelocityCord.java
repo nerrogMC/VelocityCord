@@ -27,10 +27,10 @@ import javax.security.auth.login.LoginException;
 )
 public class VelocityCord {
 
-    private static Logger logger;
-    private static ProxyServer proxyServer;
-    private static JDA jda;
-    private static config config;
+    public static Logger logger;
+    public static ProxyServer proxyServer;
+    public static JDA jda;
+    public static config config;
 
     @Inject
     public VelocityCord(ProxyServer proxyServer, Logger logger){
@@ -52,27 +52,6 @@ public class VelocityCord {
 
         //add Proxy Listener
         proxyServer.getEventManager().register(this, new VelocityListener());
-    }
-
-    //Get用
-    public static Logger getLogger() {
-        return logger;
-    }
-
-    public static String getChannelId(){
-        return config.ChannelId;
-    }
-
-    public static ProxyServer getProxyServer(){
-        return proxyServer;
-    }
-
-    public static config getConfig(){
-        return config;
-    }
-
-    public static JDA getJDA(){
-        return jda;
     }
 
 

@@ -15,10 +15,10 @@ public class DiscordListener implements EventListener {
     public void onEvent(@NotNull GenericEvent event) {
         if(event instanceof ReadyEvent){
             //Ready
-            VelocityCord.getLogger().info("Discord Login Successful!");
+            VelocityCord.logger.info("Discord Login Successful!");
         }else if (event instanceof MessageReceivedEvent){
             //メッセージを受信したとき
-            if (((MessageReceivedEvent) event).getMessage().getChannel().getId().equals(VelocityCord.getChannelId())){
+            if (((MessageReceivedEvent) event).getMessage().getChannel().getId().equals(VelocityCord.config.ChannelId)){
                 if (!((MessageReceivedEvent) event).getAuthor().isBot()){
                     //添付ファイルのurl
                     String Image = "";

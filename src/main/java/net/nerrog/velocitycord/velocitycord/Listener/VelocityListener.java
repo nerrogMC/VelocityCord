@@ -19,8 +19,8 @@ public class VelocityListener {
         embed.setTitle(event.getMessage());
         embed.setFooter("Minecraft Ingame Chat(VelocityCord)");
 
-        for (Guild g : VelocityCord.getJDA().getGuilds()){
-            TextChannel ch = g.getTextChannelById(VelocityCord.getChannelId());
+        for (Guild g : VelocityCord.jda.getGuilds()){
+            TextChannel ch = g.getTextChannelById(VelocityCord.config.ChannelId);
             if(ch != null){
                 ch.sendMessageEmbeds(embed.build()).queue();
             }
