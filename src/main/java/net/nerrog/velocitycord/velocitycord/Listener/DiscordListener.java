@@ -27,10 +27,8 @@ public class DiscordListener implements EventListener {
                             Image = " Files[ "+ a.getUrl() + " ]";
                         }
                     }
-
                     //絵文字が豆腐化するのを防ぐ
                     String MessageContent = EmojiUtils.shortCodify(((MessageReceivedEvent) event).getMessage().getContentRaw());
-
                     //ゲーム内にブロードキャスト
                     VelocityCord.inGameBroadcast(
                             "<"+((MessageReceivedEvent) event).getAuthor().getName()+"(§3Discord§r)"+"> "+

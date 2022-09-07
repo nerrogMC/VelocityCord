@@ -1,4 +1,4 @@
-package net.nerrog.velocitycord.velocitycord.yaml;
+package net.nerrog.velocitycord.velocitycord.data;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
