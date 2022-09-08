@@ -22,7 +22,7 @@ public class VelocityListener {
         //チャットからEmbedを作成してDiscordに転送
         EmbedBuilder embed = new EmbedBuilder();
         embed.setAuthor(event.getPlayer().getUsername()+"("+event.getPlayer().getCurrentServer().get().getServerInfo().getName()+")"
-                , null, "https://api.tydiumcraft.net/skin?uuid="+event.getPlayer().getUniqueId()+"&type=avatar");
+                , null, "https://api.tydiumcraft.net/v1/players/skin?uuid="+event.getPlayer().getUniqueId()+"&type=avatar");
         embed.setTitle(event.getMessage());
         embed.setFooter("Minecraft Ingame Chat(VelocityCord)");
 
